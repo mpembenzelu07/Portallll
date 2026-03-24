@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ubungo Academies | EliteScout.tz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Full CSS from temeke.html */
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <nav class="glass-nav">
+    <div class="nav-container">
+      <div class="logo"><i class="fas fa-futbol"></i><span>EliteScout<span style="font-weight:400; color:#94a3b8;">.tz</span></span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="temeke.html">Temeke</a></li>
+        <li><a href="kinondoni.html">Kinondoni</a></li>
+        <li><a href="ilala.html">Ilala</a></li>
+        <li><a href="kigamboni.html">Kigamboni</a></li>
+        <li><a href="ubungo.html" class="active">Ubungo</a></li>
+      </ul>
+      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+    </div>
+  </nav>
+  <div class="hero-section">
+    <h1><i class="fas fa-map-marker-alt"></i> Ubungo Academies</h1>
+    <p>Discover elite football development in Ubungo</p>
+  </div>
+  <div class="container">
+    <div id="districtAcademiesList" class="search-results-grid"></div>
+  </div>
+  <footer>
+    <p><i class="fas fa-copyright"></i> 2025 EliteScout.tz — The Future of Football Development</p>
+    <div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-whatsapp"></i><i class="fab fa-twitter"></i></div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Particle script (same as temeke.html)
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    function initParticles() { particles = []; for(let i=0;i<80;i++) particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, radius: Math.random()*2+1, alpha: Math.random()*0.5+0.2, speedX: (Math.random()-0.5)*0.3, speedY: (Math.random()-0.5)*0.3 }); }
+    function drawParticles() { ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle='#3b82f6'; particles.forEach(p=>{ ctx.globalAlpha=p.alpha; ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2); ctx.fill(); p.x+=p.speedX; p.y+=p.speedY; if(p.x<0) p.x=canvas.width; if(p.x>canvas.width) p.x=0; if(p.y<0) p.y=canvas.height; if(p.y>canvas.height) p.y=0; }); requestAnimationFrame(drawParticles); }
+    window.addEventListener('resize',()=>{ resizeCanvas(); initParticles(); });
+    resizeCanvas(); initParticles(); drawParticles();
+
+    document.querySelector('.mobile-menu')?.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('show'));
+    if(typeof window.renderDistrictPage === 'function') window.renderDistrictPage('Ubungo');
+  </script>
+</body>
+</html>
