@@ -62,11 +62,7 @@
       background-clip: text;
       color: transparent;
     }
-    .logo i {
-      background: none;
-      color: #3b82f6;
-      font-size: 1.8rem;
-    }
+    .logo i { background: none; color: #3b82f6; font-size: 1.8rem; }
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -93,13 +89,9 @@
       transition: 0.3s;
     }
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
+    .nav-links a.active::after { width: 100%; }
     .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-    }
+    .nav-links a.active { color: white; }
     .mobile-menu {
       display: none;
       font-size: 1.8rem;
@@ -124,9 +116,7 @@
       box-shadow: 0 25px 35px -12px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
-    .detail-card:hover {
-      transform: translateY(-4px);
-    }
+    .detail-card:hover { transform: translateY(-4px); }
     .academy-name {
       font-size: 2.2rem;
       margin-bottom: 1rem;
@@ -318,9 +308,7 @@
       pointer-events: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
-    .toast.show {
-      opacity: 1;
-    }
+    .toast.show { opacity: 1; }
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -338,13 +326,8 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       z-index: 99;
     }
-    #backToTop.show {
-      opacity: 1;
-    }
-    #backToTop i {
-      color: white;
-      font-size: 1.2rem;
-    }
+    #backToTop.show { opacity: 1; }
+    #backToTop i { color: white; font-size: 1.2rem; }
 
     footer {
       background: #050a15;
@@ -378,25 +361,12 @@
         padding: 1.5rem;
         gap: 1.2rem;
       }
-      .nav-links.show {
-        display: flex;
-      }
-      .mobile-menu {
-        display: block;
-      }
-      .academy-name {
-        font-size: 1.6rem;
-      }
-      .info-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .action-buttons {
-        flex-direction: column;
-      }
-      .whatsapp-btn, .share-btn, .trial-btn {
-        justify-content: center;
-      }
+      .nav-links.show { display: flex; }
+      .mobile-menu { display: block; }
+      .academy-name { font-size: 1.6rem; }
+      .info-row { flex-direction: column; align-items: flex-start; }
+      .action-buttons { flex-direction: column; }
+      .whatsapp-btn, .share-btn, .trial-btn { justify-content: center; }
     }
   </style>
 </head>
@@ -431,18 +401,48 @@
 
   <script src="script.js"></script>
   <script>
-    // Particle background
+    // Particle background (same as index.html)
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
     function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    function initParticles() { particles = []; for(let i=0;i<80;i++) particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, radius: Math.random()*2+1, alpha: Math.random()*0.5+0.2, speedX: (Math.random()-0.5)*0.3, speedY: (Math.random()-0.5)*0.3 }); }
-    function drawParticles() { ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle='#3b82f6'; particles.forEach(p=>{ ctx.globalAlpha=p.alpha; ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2); ctx.fill(); p.x+=p.speedX; p.y+=p.speedY; if(p.x<0) p.x=canvas.width; if(p.x>canvas.width) p.x=0; if(p.y<0) p.y=canvas.height; if(p.y>canvas.height) p.y=0; }); requestAnimationFrame(drawParticles); }
-    window.addEventListener('resize',()=>{ resizeCanvas(); initParticles(); });
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2 + 1,
+          alpha: Math.random() * 0.5 + 0.2,
+          speedX: (Math.random() - 0.5) * 0.3,
+          speedY: (Math.random() - 0.5) * 0.3
+        });
+      }
+    }
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#3b82f6';
+      particles.forEach(p => {
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
     resizeCanvas(); initParticles(); drawParticles();
 
-    // Mobile menu
-    document.querySelector('.mobile-menu')?.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('show'));
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu')?.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
 
     // Back to top
     window.addEventListener('scroll', () => {
