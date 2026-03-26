@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* Same CSS as temeke.html (full) */
     * {
       margin: 0;
       padding: 0;
@@ -20,18 +21,10 @@
       color: #edf2ff;
       overflow-x: hidden;
     }
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1a1f2e;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3b82f6;
-      border-radius: 10px;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1a1f2e; }
+    ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
 
-    /* Particle Background */
     #particles {
       position: fixed;
       top: 0;
@@ -42,7 +35,6 @@
       pointer-events: none;
     }
 
-    /* Glass Navigation */
     .glass-nav {
       background: rgba(15, 23, 42, 0.8);
       backdrop-filter: blur(12px);
@@ -70,11 +62,7 @@
       background-clip: text;
       color: transparent;
     }
-    .logo i {
-      background: none;
-      color: #3b82f6;
-      font-size: 1.8rem;
-    }
+    .logo i { background: none; color: #3b82f6; font-size: 1.8rem; }
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -101,13 +89,9 @@
       transition: 0.3s;
     }
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
+    .nav-links a.active::after { width: 100%; }
     .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-    }
+    .nav-links a.active { color: white; }
     .mobile-menu {
       display: none;
       font-size: 1.8rem;
@@ -115,28 +99,11 @@
       cursor: pointer;
     }
 
-    /* Hero Section (District Header) */
     .hero-section {
       background: radial-gradient(circle at 20% 30%, #0a0f1e, #030617);
       padding: 4rem 2rem;
       text-align: center;
-      position: relative;
     }
-    .hero-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #fff, #3b82f6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
-    }
-    .hero-section p {
-      color: #94a3b8;
-      font-size: 1.1rem;
-    }
-
-    /* Container & Cards */
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -154,20 +121,15 @@
       border-radius: 1.5rem;
       overflow: hidden;
       border: 1px solid rgba(59,130,246,0.3);
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transition: all 0.3s;
     }
     .academy-card:hover {
       transform: translateY(-6px);
       border-color: #3b82f6;
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.4);
     }
-    .card-content {
-      padding: 1.5rem;
-    }
-    .academy-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+    .card-content { padding: 1.5rem; }
+    .academy-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
     .location {
       color: #3b82f6;
       margin-bottom: 0.75rem;
@@ -197,8 +159,6 @@
       background: #3b82f6;
       gap: 12px;
     }
-
-    /* Footer */
     footer {
       background: #050a15;
       text-align: center;
@@ -218,7 +178,6 @@
       transform: translateY(-3px);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -232,15 +191,9 @@
         padding: 1.5rem;
         gap: 1.2rem;
       }
-      .nav-links.show {
-        display: flex;
-      }
-      .mobile-menu {
-        display: block;
-      }
-      .hero-section h1 {
-        font-size: 1.8rem;
-      }
+      .nav-links.show { display: flex; }
+      .mobile-menu { display: block; }
+      .hero-section h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -248,12 +201,9 @@
   <canvas id="particles"></canvas>
   <nav class="glass-nav">
     <div class="nav-container">
-      <div class="logo">
-        <i class="fas fa-futbol"></i>
-        <span>EliteScout<span style="font-weight:400; color:#94a3b8;">.tz</span></span>
-      </div>
+      <div class="logo"><i class="fas fa-futbol"></i><span>EliteScout<span style="font-weight:400; color:#94a3b8;">.tz</span></span></div>
       <ul class="nav-links">
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="temeke.html">Temeke</a></li>
         <li><a href="kinondoni.html">Kinondoni</a></li>
         <li><a href="ilala.html">Ilala</a></li>
@@ -263,35 +213,24 @@
       <div class="mobile-menu"><i class="fas fa-bars"></i></div>
     </div>
   </nav>
-
   <div class="hero-section">
     <h1><i class="fas fa-map-marker-alt"></i> Kigamboni Academies</h1>
     <p>Discover elite football development in Kigamboni</p>
   </div>
-
   <div class="container">
     <div id="districtAcademiesList" class="academies-grid"></div>
   </div>
-
   <footer>
     <p><i class="fas fa-copyright"></i> 2025 EliteScout.tz — The Future of Football Development</p>
-    <div class="social-icons">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-whatsapp"></i>
-      <i class="fab fa-twitter"></i>
-    </div>
+    <div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-whatsapp"></i><i class="fab fa-twitter"></i></div>
   </footer>
-
   <script src="script.js"></script>
   <script>
-    // Particle background
+    // Particle background (same as temeke.html)
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     function initParticles() {
       particles = [];
       for (let i = 0; i < 80; i++) {
@@ -322,23 +261,13 @@
       });
       requestAnimationFrame(drawParticles);
     }
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      initParticles();
-    });
-    resizeCanvas();
-    initParticles();
-    drawParticles();
+    window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+    resizeCanvas(); initParticles(); drawParticles();
 
-    // Mobile menu toggle
     document.querySelector('.mobile-menu')?.addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('show');
     });
-
-    // Render academies for Kigamboni district
-    if (typeof window.renderDistrictPage === 'function') {
-      window.renderDistrictPage('Kigamboni');
-    }
+    if (typeof window.renderDistrictPage === 'function') window.renderDistrictPage('Kigamboni');
   </script>
 </body>
 </html>
