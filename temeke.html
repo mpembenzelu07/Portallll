@@ -9,12 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Copy the full CSS from index.html (from * to the end) */
-    /* To avoid repetition, I will include the exact same style block as index.html */
-    /* (in the final answer, you would copy the entire <style> block from index.html here) */
-    /* For this response, I'll indicate that it's identical, but in the final answer it's included fully. */
-    /* I'll use a placeholder comment; in production, you must paste the full CSS. */
-    /* ---------- CSS START (same as index.html) ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -36,6 +30,7 @@
       background: #3b82f6;
       border-radius: 10px;
     }
+
     #particles {
       position: fixed;
       top: 0;
@@ -45,6 +40,7 @@
       z-index: -1;
       pointer-events: none;
     }
+
     .glass-nav {
       background: rgba(15, 23, 42, 0.8);
       backdrop-filter: blur(12px);
@@ -116,8 +112,8 @@
       color: white;
       cursor: pointer;
     }
+
     .hero-section {
-      position: relative;
       background: radial-gradient(circle at 20% 30%, #0a0f1e, #030617);
       padding: 4rem 2rem;
       text-align: center;
@@ -127,11 +123,11 @@
       margin: 0 auto;
       padding: 0 1rem;
     }
-    .search-results-grid {
+    .academies-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
     .academy-card {
       background: rgba(15, 25, 45, 0.7);
@@ -150,7 +146,7 @@
       padding: 1.5rem;
     }
     .academy-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
     .location {
@@ -187,7 +183,7 @@
       text-align: center;
       padding: 2rem;
       border-top: 1px solid #1e293b;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     .social-icons i {
       font-size: 1.5rem;
@@ -200,6 +196,7 @@
       color: #3b82f6;
       transform: translateY(-3px);
     }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -219,8 +216,10 @@
       .mobile-menu {
         display: block;
       }
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
     }
-    /* ---------- CSS END ---------- */
   </style>
 </head>
 <body>
@@ -244,7 +243,7 @@
     <p>Discover elite football development in Temeke</p>
   </div>
   <div class="container">
-    <div id="districtAcademiesList" class="search-results-grid"></div>
+    <div id="districtAcademiesList" class="academies-grid"></div>
   </div>
   <footer>
     <p><i class="fas fa-copyright"></i> 2025 EliteScout.tz — The Future of Football Development</p>
@@ -252,7 +251,7 @@
   </footer>
   <script src="script.js"></script>
   <script>
-    // Particle background (same as index.html)
+    // Particle background
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -295,10 +294,15 @@
     initParticles();
     drawParticles();
 
+    // Mobile menu toggle
     document.querySelector('.mobile-menu')?.addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('show');
     });
-    if (typeof window.renderDistrictPage === 'function') window.renderDistrictPage('Temeke');
+
+    // Render academies for Temeke district
+    if (typeof window.renderDistrictPage === 'function') {
+      window.renderDistrictPage('Temeke');
+    }
   </script>
 </body>
 </html>
